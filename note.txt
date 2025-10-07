@@ -1,0 +1,30 @@
+git switch main
+cat > note.txt << 'EOF'
+- Git giúp theo dõi lịch sử thay đổi.
+- Commit nhỏ, có ý nghĩa giúp review dễ hơn.
+- Branch/merge giúp làm việc nhóm hiệu quả.
+EOF
+git add note.txt
+git commit -m "Add note.txt"
+git push
+
+# Sửa, commit
+cat >> note.txt << 'EOF'
+- Reset/Revert phục hồi trạng thái an toàn.
+- Stash lưu tạm thay đổi chưa sẵn sàng commit.
+EOF
+git add note.txt
+git commit -m "Update note.txt"
+git push
+
+# reset --soft HEAD~1 rồi commit lại message mới
+git reset --soft HEAD~1
+git commit -m "Re-update note.txt with correct info"
+git push
+
+# Revert commit vừa rồi
+git log --oneline -n 5        # lấy commit-id của "Re-update..."
+git revert <commit-id>
+git push
+
+git log --oneline             # CHỤP ẢNH log
