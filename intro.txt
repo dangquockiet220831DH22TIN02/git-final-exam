@@ -1,0 +1,9 @@
+$ cat > intro.txt << 'EOF'
+> - Tôi là <dANG QUOC KIET>, sinh viên <Khoa CNTT>.
+- Hiện quan tâm đến Git, GitHub, và Dev Workflow.
+> Sở thích: GAME
+> Kỹ năng: GIAO TIEP TOT
+> EOF
+ git add intro.txt
+git commit -m "Add intro.txt with bio"
+git push
